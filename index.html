@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chalkboard Diner | Official Site</title>
+    <style>
+        :root {
+            --bg: #fcfcfc;
+            --chalkboard: #222;
+            --accent: #517c61;
+        }
+        body { font-family: sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('1000005704.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        #hero h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; }
+
+        /* Menu Styles */
+        #menu {
+            background: var(--chalkboard);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 8px solid #7d5233;
+            margin: 40px 0;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        .menu-cat { border-bottom: 1px dashed #555; margin-bottom: 20px; padding-bottom: 10px; }
+        .menu-cat h3 { color: #fffd8a; margin-top: 0; }
+        .item { display: flex; justify-content: space-between; margin-bottom: 8px; }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+        
+        footer { text-align: center; padding: 40px; background: #333; color: white; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <section id="hero">
+        <h1>The Chalkboard Diner</h1>
+        <p>Burgers • Pasta • Coffee • Pizza</p>
+    </section>
+
+    <div class="container">
+        
+        <section id="menu">
+            <h2 style="text-align: center; font-family: sans-serif;">OUR MENU</h2>
+            
+            <div class="menu-cat">
+                <h3>COFFEE</h3>
+                <div class="item"><span>Americano</span> <span>₱99 - ₱129</span></div>
+                <div class="item"><span>Spanish Latte</span> <span>₱135 - ₱169</span></div>
+                <div class="item"><span>Caramel Macchiato</span> <span>₱135 - ₱169</span></div>
+            </div>
+
+            <div class="menu-cat">
+                <h3>PASTA & PIZZA</h3>
+                <div class="item"><span>Carbonara / Alfredo</span> <span>₱145</span></div>
+                <div class="item"><span>Pepperoni Pizza</span> <span>₱269</span></div>
+                <div class="item"><span>Hawaiian Pizza</span> <span>₱259</span></div>
+            </div>
+
+            <div class="menu-cat">
+                <h3>SNACKS</h3>
+                <div class="item"><span>Chalkboard Signature Burger</span> <span>₱95</span></div>
+                <div class="item"><span>Chicken Poppers</span> <span>₱115</span></div>
+                <div class="item"><span>Flavored Fries</span> <span>₱65</span></div>
+            </div>
+        </section>
+
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="1000005584.jpg" alt="Barista">
+            <img src="1000005718.jpg" alt="Interior">
+            <img src="1000005693.jpg" alt="Coffee Cup">
+            <img src="1000005701.jpg" alt="Counter">
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Chalkboard Diner | Taytay, Rizal</p>
+    </footer>
+
+</body>
+</html>

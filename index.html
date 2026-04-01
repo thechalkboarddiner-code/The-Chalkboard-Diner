@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Chalkboard Diner</title>
+    <title>The Chalkboard Diner | Taytay, Rizal</title>
     <style>
         :root {
-            --bg: #fcfcfc;
-            --chalkboard: #222;
+            --bg: #fdfdfd;
+            --chalkboard: #1a1a1a;
             --accent: #517c61;
-            --chalk-white: #f0f0f0;
-            --chalk-yellow: #fffd8a;
-            --chalk-pink: #ffafd2;
-            --chalk-green: #a8f7a8;
+            --chalk-white: #f5f5f5;
+            --chalk-yellow: #fffda6;
+            --chalk-pink: #ffadd7;
+            --chalk-green: #aaffaa;
         }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
+        body { font-family: 'Open Sans', 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.7; }
         .container { width: 90%; max-width: 1000px; margin: 0 auto; padding: 20px; }
         
-        /* Hero Section */
+        /* Fixed Header */
+        header { background: white; border-bottom: 2px solid #eee; padding: 10px 0; position: sticky; top: 0; z-index: 1000; text-align: center; }
+        .logo-small { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; }
+
+        /* Hero / Storefront */
         #hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('storefront.jpeg') no-repeat center center/cover;
-            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('storefront4.jpeg') no-repeat center center/cover;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -28,99 +32,134 @@
             color: white;
             text-align: center;
         }
-        #hero h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        #hero h1 { font-size: 2.8rem; margin: 0; text-transform: uppercase; letter-spacing: 3px; font-weight: 800;}
+        #hero p { font-size: 1.1rem; opacity: 0.9; }
 
-        /* The Chalkboard Menu */
+        /* General Sections */
+        h2.section-title { text-align: center; margin: 50px 0 20px 0; text-transform: uppercase; letter-spacing: 2px; color: #444; }
+
+        /* Chalkboard Menu Section */
         #menu-board {
             background: var(--chalkboard);
             color: var(--chalk-white);
             padding: 30px;
-            border-radius: 15px;
-            border: 10px solid #7d5233;
+            border-radius: 20px;
+            border: 12px solid #7d5233;
             margin: 40px 0;
-            font-family: 'Comic Sans MS', 'Marker Felt', cursive;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            font-family: 'Comic Sans MS', cursive;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
-        .category-title { 
-            text-align: center; 
-            font-size: 1.8rem; 
-            margin-bottom: 20px; 
-            border-bottom: 1px dashed rgba(255,255,255,0.3);
-            padding-bottom: 10px;
-        }
+        .cat-title { text-align: center; font-size: 1.8rem; margin: 30px 0 15px 0; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 5px; }
         .coffee-h { color: var(--chalk-green); }
         .snacks-h { color: var(--chalk-pink); }
         .pasta-h { color: var(--chalk-green); }
 
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .item { display: flex; justify-content: space-between; margin-bottom: 10px; align-items: baseline; }
-        .item-name { font-size: 1.1rem; }
-        .item-price { color: var(--chalk-yellow); font-weight: bold; }
-        .sub-text { font-size: 0.8rem; color: rgba(255,255,255,0.7); display: block; font-style: italic; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .item { display: flex; justify-content: space-between; margin-bottom: 12px; align-items: baseline; }
+        .item-price { color: var(--chalk-yellow); font-weight: bold; font-size: 1.2rem;}
 
-        /* Gallery */
-        .gallery {
+        /* Showcase Gallery */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
-            margin-top: 20px;
+            margin: 20px 0 50px 0;
         }
-        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ddd; }
+        .gallery-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
         
-        footer { text-align: center; padding: 40px; background: #222; color: white; margin-top: 40px; }
+        /* Reviews Section (Using customer photos) */
+        #reviews { background: #f4f4f4; padding: 40px 0; border-radius: 12px;}
+        .review-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; display: flex; align-items: center;}
+        .customer-img { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; margin-right: 15px; }
+        .review-card strong { color: var(--accent); }
+        .review-card p { margin: 2px 0; font-size: 0.9rem; font-style: italic; color: #666;}
+        
+        footer { text-align: center; padding: 60px; background: #1a1a1a; color: white; margin-top: 50px; }
+        footer .open-hours { font-size: 0.8rem; opacity: 0.6; }
+
+        @media (max-width: 768px) { #hero h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="container">
+            <img src="logo.jpeg" alt="Logo" class="logo-small">
+        </div>
+    </header>
+
     <section id="hero">
         <h1>THE CHALKBOARD DINER</h1>
-        <p>Est. 2023 | Burgers • Pasta • Coffee • Pizza</p>
+        <p>Taytay's Favorite Spot for Burgers • Coffee • Pasta • Pizza</p>
     </section>
 
     <div class="container">
         
+        <h2 class="section-title">Our Chalkboard Specials</h2>
         <div id="menu-board">
-            <h2 style="text-align:center; font-family: sans-serif; color: white; letter-spacing: 5px;">MENU</h2>
-
-            <div class="category-title coffee-h">COFFEE MENU</div>
-            <div class="item"><span>Americano (Cold/Hot)</span> <span class="item-price">₱99 - ₱129</span></div>
-            <div class="item"><span>Spanish Latte</span> <span class="item-price">₱135 - ₱169</span></div>
-            <div class="item"><span>Caramel Macchiato</span> <span class="item-price">₱135 - ₱169</span></div>
-            <div class="item"><span>Mocha / Hazelnut</span> <span class="item-price">₱135 - ₱169</span></div>
-            <br>
-
+            
+            <div class="cat-title coffee-h">COFFEE SELECTION</div>
             <div class="menu-grid">
                 <div>
-                    <div class="category-title snacks-h">SNACKS</div>
-                    <div class="item"><span>Chalkboard Signature Burger<br><small class="sub-text">Caramelized Onion, TLC, Mayo</small></span> <span class="item-price">₱95</span></div>
-                    <div class="item"><span>Classic Cheese Burger Plus</span> <span class="item-price">₱65</span></div>
-                    <div class="item"><span>Chicken Poppers (10pcs)</span> <span class="item-price">₱115</span></div>
-                    <div class="item"><span>Flavored Fries</span> <span class="item-price">₱65</span></div>
+                    <div class="item"><span>Americano</span> <span class="item-price">₱99 - ₱129</span></div>
+                    <div class="item"><span>Spanish Latte</span> <span class="item-price">₱135 - ₱169</span></div>
+                    <div class="item"><span>Mocha</span> <span class="item-price">₱135 - ₱169</span></div>
                 </div>
-
                 <div>
-                    <div class="category-title pasta-h">PASTA & PIZZA</div>
+                    <div class="item"><span>Caramel Macchiato</span> <span class="item-price">₱135 - ₱169</span></div>
+                    <div class="item"><span>Ube Cloud</span> <span class="item-price">₱99 - ₱119</span></div>
+                    <div class="item"><span>Lychee Yogurt Coolers</span> <span class="item-price">₱75 - ₱85</span></div>
+                </div>
+            </div>
+
+            <div class="menu-grid" style="margin-top: 20px;">
+                <div>
+                    <div class="category-title snacks-h cat-title">SNACKS</div>
+                    <div class="item"><span>Chalkboard Signature Burger</span> <span class="item-price">₱95</span></div>
+                    <div class="item"><span>Classic Cheese Burger Plus</span> <span class="item-price">₱65</span></div>
+                    <div class="item"><span>Chicken Poppers</span> <span class="item-price">₱115</span></div>
+                    <div class="item"><span>Cheesy Flavored Fries</span> <span class="item-price">₱65</span></div>
+                </div>
+                <div>
+                    <div class="category-title pasta-h cat-title">PASTA & PIZZA</div>
                     <div class="item"><span>Chicken Alfredo / Carbonara</span> <span class="item-price">₱145</span></div>
-                    <div class="item"><span>Sweet Style Spaghetti</span> <span class="item-price">₱145</span></div>
+                    <div class="item"><span>Sweet Style / Meatballs Spaghetti</span> <span class="item-price">₱145</span></div>
                     <div class="item"><span>Pepperoni Pizza (12")</span> <span class="item-price">₱269</span></div>
                     <div class="item"><span>Hawaiian Pizza (12")</span> <span class="item-price">₱259</span></div>
                 </div>
             </div>
         </div>
 
-        <h2>Diner Gallery</h2>
-        <div class="gallery">
-            <img src="interior.jpg" alt="Interior">
-            <img src="logo.jpg" alt="Chalkboard Diner Logo">
-            <img src="menu.jpg" alt="Menu Board">
-            <img src="menu2.jpg" alt="Menu Board 2">
+        <h2 class="section-title">Fresh From Our Kitchen</h2>
+        <div class="gallery-grid">
+            <img src="food1.jpeg" alt="Cheesy Fries & Combo">
+            <img src="pizza.jpeg" alt="Hawaiian Pizza">
+            <img src="interior1.jpg" alt="Interior and Arcade">
+            <img src="menu.jpeg" alt="Our Menu Board">
         </div>
+
+        <section id="reviews">
+            <h2 class="section-title" style="margin-top: 20px; color: #333;">Love from Our Community</h2>
+            <div class="review-card">
+                <img src="customer.jpeg" alt="Sarah" class="customer-img">
+                <div><strong>Sarah P.</strong> ★★★★★<p>"Best burger in Taytay! The signature caramelized onion is a game-changer. Cozy vibes!"</p></div>
+            </div>
+            <div class="review-card">
+                <img src="customer4.jpeg" alt="John" class="customer-img">
+                <div><strong>John R.</strong> ★★★★☆<p>"Awesome place to hang out. Love the Spanish Latte, and the free arcade is a nice touch."</p></div>
+            </div>
+            <div class="review-card">
+                <img src="customer5.jpeg" alt="Maria" class="customer-img">
+                <div><strong>Maria C.</strong> ★★★★★<p>"Great food for a great price. Their Carbonara is fantastic!"</p></div>
+            </div>
+        </section>
 
     </div>
 
     <footer>
-        <p>Visit us at The Chalkboard Diner</p>
-        <p style="font-size: 0.8rem; opacity: 0.6;">Open until 11:00 PM</p>
+        <p><strong>The Chalkboard Diner</strong></p>
+        <p>H. Javier, Taytay, Rizal</p>
+        <p class="open-hours">Open Daily until 11:00 PM</p>
     </footer>
 
 </body>

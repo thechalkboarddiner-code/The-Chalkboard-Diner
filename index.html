@@ -17,7 +17,6 @@
         body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
         .container { width: 95%; max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        /* Header & Hero */
         header { background: white; border-bottom: 2px solid #eee; padding: 10px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
         .logo-small { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
         
@@ -33,16 +32,26 @@
         }
         #hero h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 3px; }
 
-        /* Gallery Grid */
+        .welcome-msg { text-align: center; padding: 40px 20px; background: #fff; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .welcome-msg h2 { color: var(--accent); margin-top: 0; }
+
         .section-title { text-align: center; margin: 40px 0 20px; text-transform: uppercase; letter-spacing: 2px; color: #444; }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-bottom: 50px;
-        }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 50px; }
         .gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         
+        /* Reviews Section */
+        #reviews { background: #f9f9f9; padding: 40px 20px; border-radius: 15px; margin-bottom: 40px; }
+        .review-card { background: white; padding: 20px; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .customer-img { width: 65px; height: 65px; object-fit: cover; border-radius: 50%; margin-right: 15px; border: 2px solid var(--accent); }
+        .review-text b { color: var(--accent); }
+
+        /* Social Links */
+        .social-links { text-align: center; margin: 30px 0; }
+        .btn { display: inline-block; padding: 12px 25px; margin: 10px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-fb { background: #1877F2; color: white; }
+        .btn-google { background: #4285F4; color: white; }
+        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
+
         footer { text-align: center; padding: 50px; background: #1a1a1a; color: white; margin-top: 40px; }
     </style>
 </head>
@@ -59,22 +68,46 @@
 
     <div class="container">
         
-        <h2 class="section-title">Our Menu & Shop</h2>
+        <div class="welcome-msg">
+            <h2>Welcome to the Neighborhood!</h2>
+            <p>Step into <b>The Chalkboard Diner</b>, where every cup is brewed with passion and every meal feels like home. Whether you're here for a quick caffeine fix or a long dinner with friends, we're happy to have you!</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1AfvhW8XcE/" target="_blank" class="btn btn-fb">Visit our Facebook</a>
+            <a href="https://share.google/ErppU3r6ZHwmQbilx" target="_blank" class="btn btn-google">Find us on Google</a>
+        </div>
+
+        <h2 class="section-title">Explore Our Shop</h2>
         <div class="gallery">
             <img src="menu.jpeg" alt="Main Menu">
             <img src="menu2.jpeg" alt="Coffee Menu">
             <img src="menu4.jpeg" alt="Specials Menu">
-            
             <img src="storefront3.jpeg" alt="Diner Exterior">
             <img src="storefront4.jpeg" alt="Diner Entrance">
             <img src="interior1.jpg" alt="Diner Interior">
         </div>
 
+        <section id="reviews">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="review-card">
+                <img src="customer.jpeg" alt="Customer" class="customer-img">
+                <div class="review-text"><b>Happy Diner</b> ★★★★★<p>"The best Spanish Latte in town! The vibe is so relaxing and the staff are very welcoming."</p></div>
+            </div>
+            <div class="review-card">
+                <img src="customer4.jpeg" alt="Customer" class="customer-img">
+                <div class="review-text"><b>Local Foodie</b> ★★★★★<p>"Huge fan of the Signature Burger. Great place to hang out and play some arcade games!"</p></div>
+            </div>
+            <div class="review-card">
+                <img src="customer5.jpeg" alt="Customer" class="customer-img">
+                <div class="review-text"><b>Coffee Lover</b> ★★★★★<p>"Love the Ube Cloud! This has become my daily go-to spot for coffee."</p></div>
+            </div>
+        </section>
+
         <h2 class="section-title">Food & Community</h2>
         <div class="gallery">
             <img src="food1.jpeg" alt="Signature Snacks">
             <img src="pizza.jpeg" alt="Fresh Pizza">
-            
             <img src="customer.jpeg" alt="Happy Customers">
             <img src="customer4.jpeg" alt="Diner Vibes">
             <img src="customer5.jpeg" alt="Community Favorites">
